@@ -2,7 +2,7 @@
 # from api.models import Marks
 from . import app, db
 from .models import Marks
-from flask import request, send_from_directory
+from flask import request, send_from_directory, jsonify
 import json
 
 # Serve the frontend
@@ -15,7 +15,7 @@ def index():
 @app.route('/init')     
 def init_db():
     Marks.create_table()
-    return 'INITIALIZED'
+    return jsonify('INITIALIZED')
 
 
 # READ
@@ -29,7 +29,7 @@ def get_marks():
     for x in Marks.query.all():
         res['marks'].append(x.to_json())
 
-    return res
+    return jsonify(res)
 
 
 # CREATE
@@ -39,9 +39,9 @@ def post_marks():
     data = json.loads(request.data)
 
     if Marks.query.get(int(data['roll'])):
-        return {
+        return jsonify({
             'error': 'ROLL_NO_ALREADY_PRESENT'
-        }
+        })
 
     try:
         marks = Marks(
@@ -55,14 +55,14 @@ def post_marks():
         )
         db.session.add(marks)
         db.session.commit()
-        return {
+        return jsonify({
             'message': 'ADDED'
-        }
+        })
 
     except Exception as e:
-        return {
+        return jsonify({
             'error': str(e)
-        }
+        })
 
 
 # UPDATE
@@ -75,9 +75,9 @@ def update_marks():
     marks = Marks.query.get(data['roll'])
 
     if not marks:
-        return {
+        return jsonify({
             'error': 'NOT_FOUND'
-        }
+        })
 
     # update values if provided in POST body
     if 'name' in data:
@@ -94,9 +94,9 @@ def update_marks():
         marks.percentage = data['percent']
 
     db.session.commit()
-    return {
+    return jsonify({
         'message': 'UPDATED'
-    }
+    })
 
 
 # DELETE
@@ -105,10 +105,10 @@ def delete_marks(roll):
     res = Marks.query.filter_by(roll_no=roll).delete()
     db.session.commit()
     if res:
-        return {
+        return jsonify({
             'message': 'DELETED'
-        }
+        })
     else:
-        return {
+        return jsonify({
             'error': 'NOT_FOUND'
-        }
+        })

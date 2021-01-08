@@ -3,6 +3,8 @@ build/
 .eslintcache
 package-lock.json
 
-static/
+
 aws.zip
 virt/
+__pycache__/
+.git/
