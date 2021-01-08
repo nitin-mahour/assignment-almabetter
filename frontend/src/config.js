@@ -1,1 +1,1 @@
-export const API_URL = 'http://assignment-almabetter.ap-south-1.elasticbeanstalk'
+export const API_URL = 'https://almabetter-assignment.herokuapp.com'
