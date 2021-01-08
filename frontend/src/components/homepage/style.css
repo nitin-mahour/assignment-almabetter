@@ -1,0 +1,40 @@
+#homepage {
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#homepage header {
+    color: #ffffff;
+    font-size: 3rem;
+    font-family: sans-serif;
+    text-align: center;
+    padding-top: 4rem;
+}
+
+#homepage section {
+    margin: auto;
+    align-self: center;
+}
+
+#homepage button {
+    display: block;
+    background-color: #222222;
+    font-size: 1.5rem;
+    color: #ffffff;
+    margin: 3rem;
+    padding: 3rem;
+    border: 2px solid #444444;
+    border-radius: 1rem;
+    outline: none;
+}
+
+#homepage button:hover {
+    background-color: #444444;
+    cursor: pointer;
+    outline: none;
+}
+
+a:link {
+    text-decoration: none;
+}

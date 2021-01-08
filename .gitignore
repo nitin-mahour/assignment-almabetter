@@ -1,0 +1,7 @@
+node_modules/
+build/
+.eslintcache
+package-lock.json
+
+static/
+aws.zip

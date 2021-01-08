@@ -1,0 +1,103 @@
+#marksinput {
+    font-family: sans-serif;
+    display: flex;
+    flex-direction: column;
+    height: 100vh;
+}
+
+#marksinput header {
+    font-size: 3rem;
+    text-align: center;
+    color: #ffffff;
+    margin-top: 4rem;
+}
+
+#marksinput section {
+    margin: auto;
+    text-align: center;
+}
+
+#marksinput form {
+    background-color: #666666;
+    border-radius: 1rem;
+    color: #ffffff;
+    font-size: 1.25rem;
+    padding: 2rem 3.5rem;
+    text-align: center;
+}
+
+#marksinput input {
+    display: block;
+    margin: 1.25rem 0.5rem;
+    height: 1.5rem;
+    width: 88%;
+    font-size: 1.25rem;
+    padding: 0.25rem;
+    background-color: #666666;
+    border: none;
+    border-bottom: 2px solid #333333;
+    outline: none;
+    color: #ffffff;
+    /* text-align: center; */
+}
+
+#marksinput input::placeholder {
+    color: #333333;
+}
+
+#marksinput button {
+    background-color: #333333;
+    border: none;
+    border-radius: 2rem;
+    font-size: 1.25rem;
+    color: #ffffff;
+    padding: 0.75rem 1.5rem;
+    margin-top: 1rem;
+    outline: none;
+}
+
+#marksinput button:hover {
+    cursor: pointer;
+    padding: 1rem 2rem;
+    margin: 0.75rem 0 -0.25rem;
+}
+
+#marksinput #show {
+    display: flex;
+    justify-content: center;
+    gap: 4rem;
+    margin-bottom: 3rem;
+    color: #ffffff;
+}
+
+#marksinput .small {
+    text-align: center;
+    font-size: 1.25rem;
+}
+
+#marksinput .big {
+    font-size: 2.25rem;
+    margin-bottom: 0.5rem;
+}
+
+#marksinput a {
+    /* color: #ffffff;
+    font-size: 1.25rem;
+    border: 1px solid #ffffff;
+    border-radius: 2rem;
+    padding: 1rem;
+    width: fit-content; */
+    margin: 0 auto auto auto; 
+    align-self: center;
+    font-size: 1.25rem;
+    color: #ffffff;
+    border: 1px solid #ffffff;
+    border-radius: 2rem;
+    padding: 0.5rem 1rem;
+}
+
+#marksinput a:hover {
+    /* background-color: #666666; */
+    padding: 0.75rem 1.25rem;
+    margin-top: -0.5rem;
+}
